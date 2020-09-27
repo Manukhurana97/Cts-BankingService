@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light  " [ngSwitch]="status" style="background-color: #E6E6FA;">
+    <a class="navbar-brand" href="#">ALpHA Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngSwitchCase="false">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <ul>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/Login">Login</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/Register">Sign up</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngSwitchCase="true">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <ul>
+
+        <li class="nav-item active">
+          <a class="nav-link" (click)="onlogout()" style="cursor: pointer;">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+
+    
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<div *ngIf="error_alert" class="alert alert-success alert-danger fade show"  style="margin-top: 0%;">
+    <strong>{{mgs}}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://cdn.onlinewebfonts.com/svg/img_311846.png" id="icon" alt="User Icon" />
+        </div>
+        <br>
+
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <input type="text" formControlName="email" id="email" name="email" class="fadeIn second" name="login" placeholder="login">
+            <input type="password" formControlName="password" id="password" name="password" class="fadeIn third" name="login" placeholder="password">
+            <br><input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" routerLink="/Register" aria-disabled="true">Register</a>
+        </div>
+
+    </div>
+</div>

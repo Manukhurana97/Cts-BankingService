@@ -1,0 +1,34 @@
+<div *ngIf="error_alert" class="alert alert-success alert-danger fade show"  style="margin-top: 2%;">
+  <strong>{{mgs}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      
+      <br>
+  
+      <!-- Login Form -->
+      <form [formGroup]="registerForm" (ngSubmit)='Register()'>
+        <input type="text" formControlName="email" id="email" name="email" class="fadeIn second" name="login" placeholder="login">
+        <input type="password" formControlName="password"  id="password" name="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="password" formControlName="confirm_password"  id="confirm_password" name="confirm_password" class="fadeIn third" name="login" placeholder="Confirm password">
+        <input type="text" formControlName="firstname"  id="firstname" name="firstname" class="fadeIn third" name="login" placeholder="Firstname">
+        <input type="text" formControlName="lastname"  id="lastname" name="lastname" class="fadeIn third" name="login" placeholder="lastname">
+        <input type="text" formControlName="dob"  id="dob" name="dob" class="fadeIn third" name="login" placeholder="01/01/1950">
+        <input type="text" formControlName="contactNo"  id="contactNo" name="contactNo" class="fadeIn third" name="login" placeholder="10 Digit">
+        <input type="text" formControlName="pan"  id="pan" name="pan" class="fadeIn third" name="login" placeholder="Pan card ">
+        <br><input type="submit" class="fadeIn fourth" value="CreateAccount">
+      </form>
+      
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/Login" aria-disabled="true">login</a>
+    </div>
+  
+    </div>
+  </div>

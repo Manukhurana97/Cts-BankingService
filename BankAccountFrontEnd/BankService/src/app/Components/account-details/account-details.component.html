@@ -1,0 +1,43 @@
+<form style="margin-left: 3%;">
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label"><h5>Bank Name:</h5></label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext " id="staticEmail" value="{{ data.bankname }}">
+      </div> 
+    </div>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"><h5> Account No:</h5></label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext form-control-lg" id="staticEmail" value="{{ data.accountno }}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"><h5>Micr:</h5></label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ data.micr }}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"><h5>IFSC:</h5></label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ data.ifsc }}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"><h5>PanCard:</h5></label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext form-control-lg" id="staticEmail" value="{{ data.pan }}">
+        </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label"><h5>Balance:</h5></label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext form-control-lg" id="staticEmail" value="{{ data.amount | currency: 'INR' }}">
+      </div>
+  </div>
+    
+</form>
+
+<div id="formFooter" style="margin-left: 1%;">
+    <button class="btnn from-left" (click)="purhasefunds()">Purchase funds</button>
+</div>

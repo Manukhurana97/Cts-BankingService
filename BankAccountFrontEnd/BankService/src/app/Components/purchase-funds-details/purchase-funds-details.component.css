@@ -1,0 +1,35 @@
+.flex-container{
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: lightcyan;
+    width: 60%;
+
+    
+}
+
+h2{
+    color: #cccccc;
+}
+
+.flex-container-Sum {
+     color: #cccccc;
+    display: flex;
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.flex-container-Sum div {
+    padding: 10px;
+    align-content: center;
+}
+
+.flex-container button
+{
+    background-color: gray;
+    padding: 15px 80px;
+}

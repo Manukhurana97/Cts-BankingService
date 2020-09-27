@@ -1,0 +1,79 @@
+<html>
+
+<head>
+</head>
+
+<div class="body">
+    
+    <div class="parent">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Account no</h2>
+                <table class="table table-borderless">
+                    <!-- <th></th> -->
+                    <th>Bank</th>
+                    <th>Account  No</th>
+                    <tbody>
+                        <tr *ngFor='let data of accountdata'>
+                            <!-- <td><input type="radio" name="account" onclick="myFunction()"></td> -->
+                            <td>
+                                <h4><label (click)="Accountdetails(data.accountno)">{{ data.bankname}}</label></h4>
+                            </td>
+                            <td>
+                                <h5>
+                                    <h5><label
+                                            (click)="Accountdetails(data.accountno)">{{data.accountno  }}</label>
+                                    </h5>
+                                </h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="formFooter">
+                    <button class="btnn from-left" (click)='createaccount()'>Create account</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+                <h2> Purchased funds</h2>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">Fund Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Purchased date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let data of Funddata'>
+
+                            <!-- <th scope="row">{{ data.id }}</th> -->
+                            <td>
+                                <h5> <label (click)="funddetails(data.id)">{{ data.name }}</label></h5>
+                            </td>
+                            <td> <label (click)="funddetails(data.id)">{{ data.amount |currency : 'INR' }}</label></td>
+                            <td> <label (click)="funddetails(data.id)">{{ data.date |date : 'longDate' }}</label></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="formFooter">
+                    <button class="btnn from-left" (click)="purhasefunds()">Purchase funds</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+
+</div>
+
+</html>

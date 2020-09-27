@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+</head>
+<body>
+    
+    <div class='flex-container'>
+        <h2>Purchased Summary</h2>
+        <br>
+        <div class="flix-container-Sum">
+            <h3>Plan Name: {{ purchase_data.name }}</h3>
+            <h3>Account No: {{ purchase_data.accountno }}</h3>
+            <h4>Price: {{ purchase_data.amount | currency : 'INR' }}</h4>
+            <h4>Bank Name: {{ purchase_data.bankname }}</h4>
+            <h4>IFSC: {{ purchase_data.ifsc }}</h4>
+            <h4>MICR: {{ purchase_data.micr }}</h4>
+            <h4>Pan: {{ purchase_data.pan }}</h4>
+            <h5>purchase date: {{purchase_data.date | date: "longDate" }}</h5>
+            <h5>purchase Time: {{purchase_data.date | date: "mediumTime" }}</h5>
+        </div>
+        <button class="btn btn-primary" (click)="purhasefunds()">Purchase funds</button>
+        <button class="btn btn-danger" (click)="DeleteFunds(purchase_data.id)">Sell funds</button>
+    </div>
+
+</body>
+</html>
+

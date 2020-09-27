@@ -1,0 +1,73 @@
+<!-- Succcess alert -->
+<div *ngIf="error_alert" class="alert alert-warning alert-dismissible fade show"  style="margin-top: 0%;">
+    <strong>{{mgs}}</strong> {{s_mgs}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- Warning alert -->
+<div *ngIf="MF_alert" class="alert alert-success alert-dismissible fade show"  style="margin-top: 0%;">
+    <strong>{{mgs}}</strong> {{s_mgs}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+
+<div class="flex-container">
+    <h4>Mutual Funds</h4>
+    <div class="fund-continer-funds">
+        <table class="table table-borderless table-hover">
+            <thead>
+                <th>Fund Name</th>
+                <th>Scheme Category</th>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let data of Funddata">
+                    <td ><label (click)=P_Funds(data.id)>{{data.name}}</label></td>
+                    <td ><label (click)=P_Funds(data.id)>{{data.scheme_category}}</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+        <div class="modal fade" id="myModal" role="dialog" [ngClass]="{'show':showaccount}"></div>
+        <hr>
+        <h4>Account</h4>
+        <div class="fund-continer-Account">
+        <!-- <div [ngClass]="{'show':showaccount}"> -->
+            <table class="table table-borderless">
+                <thead>
+                    <th>Bank Name</th>
+                    <th>Account No</th>
+                    <th>Balance</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let data of accountdata'>
+                        <td><label> {{data.bankname}}</label></td>
+                        <td>{{ data.accountno }}</td> 
+                        <td>{{ data.amount | currency:'INR' }} </td>
+                        <td><button class="btn btn-primary" (click)=s_Account(data.accountno)>select</button></td>
+                    </tr>
+                </tbody>    
+            </table>
+        <!-- </div> -->
+    </div>
+</div>
+
+<br>
+<hr>
+
+<div *ngIf="cartdata!=undefined"  style="margin-left: 1%;">
+    <h3>Summary</h3>
+    <h5>Scheme name: {{cartdata.name}} </h5>
+    <h5>Account: {{cartdata.accountno}} </h5>
+    <h5>Amount: {{cartdata.amount}} </h5>
+    <h5>IFSC: {{cartdata.ifsc}} </h5>
+    <h5>Micr: {{cartdata.micr}} </h5>
+    <h5>PAN: {{cartdata.pan}} </h5>
+    <button class="btn btn-primary" (click)="Buy(cartdata.id)">Purchase Fund</button>
+    <button class="btn btn-danger" (click)="clearCart(cartdata.id)">Remove Fund</button>
+</div>

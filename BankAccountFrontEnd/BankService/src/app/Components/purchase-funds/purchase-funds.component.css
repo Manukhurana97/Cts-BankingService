@@ -1,0 +1,33 @@
+.fund-continer {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fund-continer-funds 
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.fund-continer-funds div
+{
+    padding: 10px;
+    align-content: center;
+}
+
+.fund-continer-account 
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    flex-direction: row;
+    
+}
+
+.fund-continer-account div
+{
+    padding: 10px;
+    align-content: center;
+}
